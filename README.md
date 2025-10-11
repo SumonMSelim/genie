@@ -23,7 +23,7 @@ Whether you're setting up a new machine or automating repetitive tasks, Genie ha
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/genie.git
+   git clone https://github.com/SumonMSelim/genie.git
    cd genie
    ```
 
