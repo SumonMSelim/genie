@@ -2,15 +2,17 @@
 
 Terminal setup and configuration utilities to create a powerful, beautiful command-line environment.
 
-## Contents
+## Preview
 
-### Files in this Directory
+See what your terminal will look like after setup:
 
-| File                          | Type   | Description                               |
-|-------------------------------|--------|-------------------------------------------|
-| `mac-terminal-installer.sh`   | Script | Automated macOS iterm2 terminal setup     |
-| `iterm2-Profile-Default.json` | Config | iTerm2 profile with Material Design theme |
+<p>
+  <img src="../screenshots/macos-iterm2-terminal-1.webp" alt="macOS iTerm2 Terminal Setup - Screenshot 1" width="100%">
+</p>
 
+<p>
+  <img src="../screenshots/macos-iterm2-terminal-2.webp" alt="macOS iTerm2 Terminal Setup - Screenshot 2" width="100%">
+</p>
 ---
 
 ## macOS Terminal (iTerm2) Installer
@@ -32,6 +34,7 @@ This script automates the complete setup of a professional terminal environment:
     - Configures PATH for both Intel and Apple Silicon Macs
 
 3. **Shell Setup**
+    - Install iterm2 
     - Installs Zsh
     - Sets Zsh as your default shell
     - Installs Oh My Zsh framework
@@ -217,7 +220,7 @@ A beautifully crafted iTerm2 profile featuring a Material Design-inspired color 
 - 256-color terminal type support
 - UTF-8 character encoding
 
-### 📥 How to Import
+### How to Import
 
 #### Method 1: Via iTerm2 Preferences (Recommended)
 
@@ -245,11 +248,9 @@ A beautifully crafted iTerm2 profile featuring a Material Design-inspired color 
 # Copy to iTerm2 dynamic profiles directory
 mkdir -p ~/Library/Application\ Support/iTerm2/DynamicProfiles
 cp iterm2-Profile-Default.json ~/Library/Application\ Support/iTerm2/DynamicProfiles/
-
-# Restart iTerm2
 ```
 
-### 🎯 Post-Import Setup
+### Post-Import Setup
 
 After importing the profile:
 
@@ -270,7 +271,7 @@ After importing the profile:
     - New windows will use the imported profile
     - Or select it from: Profiles → Default
 
-### 🔧 Customization
+### Customization
 
 You can customize the profile further in iTerm2:
 
@@ -291,5 +292,3 @@ You can customize the profile further in iTerm2:
 - Profiles → Window → Blur (currently set to ~10.3)
 
 ---
-
-**Perfect companion to the terminal installer script! 🎨✨**
