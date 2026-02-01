@@ -1,0 +1,49 @@
+# Genie Multi-OS Environment Definitions
+
+services:
+  # # Ubuntu
+  ubuntu24:
+    image: ubuntu:24.04
+    container_name: genie-ubuntu24
+    volumes:
+      - ../..:/genie:ro
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+
+  ubuntu22:
+    image: ubuntu:22.04
+    container_name: genie-ubuntu22
+    volumes:
+      - ../..:/genie:ro
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+
+  ubuntu20:
+    image: ubuntu:20.04
+    container_name: genie-ubuntu20
+    volumes:
+      - ../..:/genie:ro
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+
+  # # Debian
+  debian12:
+    image: debian:12
+    container_name: genie-debian12
+    volumes:
+      - ../..:/genie:ro
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+
+  debian11:
+    image: debian:11
+    container_name: genie-debian11
+    volumes:
+      - ../..:/genie:ro
+    tty: true
+    stdin_open: true
+    command: /bin/bash
