@@ -15,6 +15,7 @@ Whether you're setting up a new machine or automating repetitive tasks, Genie ha
 |----------|-----------------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------|
 | Terminal | `mac-terminal-installer.sh` | Complete macOS iterm2 terminal setup with Zsh, Oh My Zsh, Powerlevel10k, Nerd Fonts, and modern CLI tools | [View Guide](terminal/README.md) |
 | Server   | `bootstrap-server.sh`       | Debian/Ubuntu server bootstrap: packages, Zsh, sudo user, swap, UFW, Fail2Ban, SSH keys & hardening       | [View Guide](server/README.md)   |
+| Server   | `install-outline-server.sh` | Install and run Outline Server VPN (Shadowbox) on Ubuntu/Debian via Docker Compose                        | [View Guide](server/outline/README.md) |
 
 ---
 
@@ -45,9 +46,16 @@ Use the test script to run/test a script inside a Docker container.
 ./tests/run.sh ubuntu24 server/bootstrap-server.sh
 ```
 
+For scripts that require Docker inside the container (e.g. Outline Server), use the dedicated test script:
+
+```bash
+./tests/run.sh ubuntu24 tests/test-outline-server.sh
+```
+
 Notes:
 - `script_path` is **relative to the project root** (example: `server/bootstrap-server.sh`)
 - You’ll be prompted before the environment is stopped (so you can keep it running for debugging)
+- Test containers run with `privileged: true` to support Docker-in-Docker
 
 ## Philosophy
 

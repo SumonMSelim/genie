@@ -9,6 +9,7 @@ services:
       - ../..:/genie:ro
     tty: true
     stdin_open: true
+    privileged: true
     command: /bin/bash
 
   ubuntu22:
@@ -18,6 +19,7 @@ services:
       - ../..:/genie:ro
     tty: true
     stdin_open: true
+    privileged: true
     command: /bin/bash
 
   ubuntu20:
@@ -27,6 +29,7 @@ services:
       - ../..:/genie:ro
     tty: true
     stdin_open: true
+    privileged: true
     command: /bin/bash
 
   # # Debian
@@ -37,6 +40,7 @@ services:
       - ../..:/genie:ro
     tty: true
     stdin_open: true
+    privileged: true
     command: /bin/bash
 
   debian11:
@@ -46,4 +50,5 @@ services:
       - ../..:/genie:ro
     tty: true
     stdin_open: true
+    privileged: true
     command: /bin/bash

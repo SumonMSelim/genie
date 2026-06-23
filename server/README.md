@@ -41,3 +41,24 @@ From project root:
 - Each step asks for confirmation; you can skip any step.  
 - In containers or restricted environments, swap/UFW/SSH may be limited; the script skips or warns where needed.  
 - After SSH hardening, test login in a **new** terminal before closing the current one.
+
+---
+
+## Outline Server VPN (`outline/`)
+
+Install, configure and run **Outline Server VPN** (Shadowbox) on **Ubuntu or Debian** (latest LTS/stable) using **Docker Compose**.
+
+**Script:** `outline/install-outline-server.sh`
+
+- **Requires** Docker and Docker Compose (v2 plugin) to be installed already  
+- Creates config and TLS cert under `/opt/outline` (or `--install-dir`)  
+- Generates `compose.yml` and runs Shadowbox  
+- Prints `apiUrl` and `certSha256` for [Outline Manager](https://getoutline.org/get-started/#step-2)
+
+### Usage
+
+```bash
+sudo ./server/outline/install-outline-server.sh
+```
+
+Options: `--hostname` (required), `--api-port`, `--keys-port`, `--install-dir`. See `--help` or [outline/README.md](outline/README.md) for details.
