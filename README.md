@@ -1,5 +1,10 @@
 # 🧞‍♂️ Genie
 
+![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-blue)
+![Shell](https://img.shields.io/badge/shell-bash-green)
+![Scripts](https://img.shields.io/badge/scripts-3-orange)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 *Your magical development assistant - granting dev wishes, one script at a time*
 
 A collection of handy scripts and utilities to streamline development workflow and system setup.
@@ -16,6 +21,7 @@ Whether you're setting up a new machine or automating repetitive tasks, Genie ha
 | Terminal | `mac-terminal-installer.sh` | Complete macOS iterm2 terminal setup with Zsh, Oh My Zsh, Powerlevel10k, Nerd Fonts, and modern CLI tools | [View Guide](terminal/README.md) |
 | Server   | `bootstrap-server.sh`       | Debian/Ubuntu server bootstrap: packages, Zsh, sudo user, swap, UFW, Fail2Ban, SSH keys & hardening       | [View Guide](server/README.md)   |
 | Server   | `install-outline-server.sh` | Install and run Outline Server VPN (Shadowbox) on Ubuntu/Debian via Docker Compose                        | [View Guide](server/outline/README.md) |
+| Git      | `setup-git-profile.sh`      | Set up a named git identity: SSH key, GPG signing, per-directory gitconfig, and gclone helper             | [View Guide](git/README.md)      |
 
 ---
 
@@ -81,7 +87,7 @@ Always review scripts before running them on your system. While these scripts ar
 
 ## License
 
-MIT License - feel free to use and modify as needed.
+[MIT License](LICENSE) - feel free to use and modify as needed.
 
 ---
 

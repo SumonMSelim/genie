@@ -78,10 +78,6 @@ This script automates the complete setup of a professional terminal environment:
 #### Usage
 
 ```bash
-# Make the script executable
-chmod +x mac-terminal-installer.sh
-
-# Run the installer
 ./mac-terminal-installer.sh
 ```
 
