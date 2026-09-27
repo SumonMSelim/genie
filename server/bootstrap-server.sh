@@ -260,6 +260,8 @@ alias ..='cd ..'
 alias c='clear'
 alias h='history'
 alias zsh-reload='source ~/.zshrc'
+alias zsh-edit='nano ~/.zshrc'
+alias upgrade="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
 
 # Better history
 export HISTSIZE=10000
