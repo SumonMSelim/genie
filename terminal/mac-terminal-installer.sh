@@ -169,6 +169,11 @@ read -rp "📊 Would you like to install zeitfetch (fast system info display too
 if [[ "$install_zeitfetch" =~ ^[Yy]$ ]]; then
     echo "🔄 Installing zeitfetch via Homebrew..."
     brew tap nidnogg/zeitfetch
+    # Newer Homebrew refuses third-party taps unless trusted. Trust only this
+    # formula (not the whole tap); older brew versions have no `trust` command.
+    if brew commands | grep -qx trust; then
+        brew trust --formula nidnogg/zeitfetch/zeitfetch
+    fi
     brew install zeitfetch
     echo "✅ zeitfetch installed! Run 'zeitfetch' to see your system info."
     
@@ -188,8 +193,10 @@ echo "📝 Creating custom .zshrc configuration..."
 
 # Backup existing .zshrc if it exists
 if [[ -f "$HOME/.zshrc" ]]; then
-    echo "📋 Backing up existing .zshrc to .zshrc.backup"
-    cp "$HOME/.zshrc" "$HOME/.zshrc.backup"
+    backup="$HOME/.zshrc.backup"
+    [[ -e "$backup" ]] && backup="$HOME/.zshrc.backup.$(date +%Y%m%d%H%M%S)"
+    echo "📋 Backing up existing .zshrc to $backup"
+    cp "$HOME/.zshrc" "$backup"
 fi
 
 # Create new .zshrc with custom configuration
@@ -219,7 +226,6 @@ export TERM="xterm-256color"
 export SHELL="/bin/zsh"
 export EDITOR="nano"
 export LANG=en_US.UTF-8
-export ARCHFLAGS="-arch x86_64"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
@@ -289,9 +295,6 @@ alias git-cleanup='git branch | grep -v "^\s*\*|\bmain\b|\bmaster\b|\bdevelop\b|
 
 # Modern CLI tool aliases (if installed)
 command -v eza >/dev/null && alias ls='eza --icons' && alias ll='eza -la --icons'
-command -v bat >/dev/null && alias cat='bat'
-command -v fd >/dev/null && alias find='fd'
-command -v rg >/dev/null && alias grep='rg'
 
 # FZF configuration
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
